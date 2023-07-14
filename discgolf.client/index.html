@@ -20,9 +20,13 @@
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
       <a class="navbar-brand" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
+        <!-- <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ml-2">discgolf.client</span>
+        <span class="ml-2">discgolf.client</span> -->
+        <span class="ml-2 text-light fs-3 fw-bold">Frolf Mania</span>
+        <button onclick="app.CourseController.setCourseForm()" id="courseFormButton" class="btn btn-info d-none"
+          type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Create
+          Course</button>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <!-- NAVLINKS -->
-          <a href="#/about" class="nav-link">About</a>
+          <!-- <a href="#/about" class="nav-link">About</a> -->
         </div>
       </div>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
@@ -41,29 +45,6 @@
   <!-- SECTION -->
   <main>
 
-    <section id="auth-template">
-      <!-- TODO REMOVE THE AUTH TEMPLATE ONCE YOU VERIFY YOUR AUTH SETTINGS -->
-      <div class="container-fluid">
-        <div class="row my-3">
-          <div class="col-lg-5" id="auth-settings">
-            <div class="card p-2 skeleton-loader">
-              <div class="card-title p-2">
-                <div class="d-flex align-items-center">
-                  <div class="skeleton-loader avatar"></div>
-                  <div class="skeleton-loader text mx-2"></div>
-                </div>
-              </div>
-              <div class="card-body border-top">
-                <div class="skeleton-loader text block"></div>
-                <div class="skeleton-loader text block"></div>
-                <div class="skeleton-loader text block"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="router-view">
       <!-- primary viewport -->
     </section>
@@ -72,11 +53,58 @@
   </main>
 
   <!-- SECTION -->
-  <footer class="bg-dark text-light">
+  <!-- <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
     </div>
-  </footer>
+  </footer> -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="modal-guts">
+
+      <!-- <div class="modal-content ps-3">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="">Course</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row">
+          <form action="" onsubmit="app.CourseController.createCourse(event)">
+            <div>
+              <label for="name">name of course</label> -->
+      <!-- <input type="text" name="name" id="name" minlength="1" maxlength="75" required placeholder="Name of Course">
+      </div>
+      <div> -->
+      <!-- <label for="imgUrl">Course Img</label> -->
+      <!-- <input type="url" name="imgUrl" id="imgUrl" required minlength="2" maxlength="300" placeholder="imgUrl">
+      </div>
+      <div> -->
+      <!-- <label for="description">Course Description</label> -->
+      <!-- <textarea placeholder="Course Description" name="description" id="description" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+        <label for="difficulty">Difficulty</label>
+        <select name="difficulty" id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+      </form>
+      </div> -->
+
+      <!-- Button trigger modal -->
+      <!-- <button type="button" class="btn btn-primary">
+    Launch demo modal
+  </button> -->
+
+
+    </div>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
