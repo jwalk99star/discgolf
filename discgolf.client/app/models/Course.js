@@ -1,10 +1,22 @@
 export class Course {
-    contrustor(data) {
+    constructor(data) {
+        // console.log('data', data)
         this.name = data.name
         this.description = data.description
         this.imgUrl = data.imgUrl
         this.difficulty = data.difficulty
         this.accountId = data.accountId
+    }
+
+    get coursesCardTemplate() {
+        return `
+    <div class="card" style="width: 18rem;">
+        <img src="${this.imgUrl}" class="card-img-top" alt="${this.name}">
+        <div class="card-body">
+        <p class="card-name">${this.name}</p>
+        </div>
+    </div>
+        `
     }
 
     static get CourseForm() {
