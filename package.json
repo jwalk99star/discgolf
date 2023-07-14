@@ -1,0 +1,13 @@
+
+  {
+    "name": "discgolf",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "npm run setup:server",
+      "setup:app": "npm run setup:server && npm run setup:client",
+      "setup:client": "cd discgolf.client && npm i",
+      "setup:server": "cd discgolf && npm i",
+      "start": "node discgolf/index.js"
+    }
+  }
+  
