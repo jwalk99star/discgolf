@@ -33,7 +33,7 @@
   }
 </style>
 
-<body class="debug">
+<body class="">
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
@@ -41,11 +41,11 @@
         <!-- <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
         <span class="ml-2">discgolf.client</span> -->
-        <span class="ml-2 text-light fs-3 fw-bold">Frolf Mania</span>
         <button onclick="app.CoursesController.setCourseForm()" id="courseFormButton" class="btn btn-info d-none"
-          type="button" data-bs-toggle="modal" data-bs-target="#modal">Create
-          Course</button>
+        type="button" data-bs-toggle="modal" data-bs-target="#modal">Create
+        Course</button>
       </a>
+      <span class="ml-2 text-light text-center fs-3 fw-bold">Frolf Mania</span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,9 +61,9 @@
   </header>
 
   <!-- SECTION -->
-  <main>
+  <main id="router-view">
     <div class="container-fluid">
-      <div id="coursesCard" class="row">
+      <div id="coursesCard" class="row justify-content-around">
         <!-- <div class="card" style="width: 18rem;">
           <img src="${this.imgUrl}" class="card-img-top" alt="${this.name}">
           <div class="card-body">
