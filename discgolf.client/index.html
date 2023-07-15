@@ -15,7 +15,25 @@
   <title>discgolf.client</title>
 </head>
 
-<body>
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="debug">
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
@@ -24,8 +42,8 @@
           loading="lazy">
         <span class="ml-2">discgolf.client</span> -->
         <span class="ml-2 text-light fs-3 fw-bold">Frolf Mania</span>
-        <button onclick="app.CourseController.setCourseForm()" id="courseFormButton" class="btn btn-info d-none"
-          type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Create
+        <button onclick="app.CoursesController.setCourseForm()" id="courseFormButton" class="btn btn-info d-none"
+          type="button" data-bs-toggle="modal" data-bs-target="#modal">Create
           Course</button>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -58,6 +76,7 @@
 
   </main>
 
+
   <!-- SECTION -->
   <!-- <footer class="bg-dark text-light">
     <div class="text-center no-select">
@@ -67,7 +86,7 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" id="modal-guts">
 
       <!-- <div class="modal-content ps-3">
@@ -107,9 +126,9 @@
     Launch demo modal
   </button> -->
 
-
     </div>
   </div>
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

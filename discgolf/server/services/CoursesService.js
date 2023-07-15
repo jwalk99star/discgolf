@@ -22,9 +22,6 @@ class CoursesService {
 
   async updateCourse(courseId, accountId, courseData) {
     const targetCourse = await this.getCourseById(courseId)
-    if (!targetCourse) {
-      return null
-    }
     if (accountId != targetCourse.accountId.toString()) {
       throw new Forbidden('Insufficient permisions to update this course.')
     }
@@ -44,6 +41,7 @@ class CoursesService {
       throw new Forbidden('Insufficient permisions to update this course.')
     }
     await targetCourse.remove()
+    return `Course with id: ${courseId} was successfully removed.`
   }
 }
 

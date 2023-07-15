@@ -27,9 +27,6 @@ export class CoursesController extends BaseController {
     try {
       const courseId = req.params.courseId
       const course = await coursesService.getCourseById(courseId)
-      if (!course) {
-        return res.send(`Course with id: ${courseId} does not exist.`)
-      }
       return res.send(course)
     } catch (error) {
       next(error)
@@ -53,9 +50,6 @@ export class CoursesController extends BaseController {
       const accountId = req.userInfo.id
       const courseData = req.body
       const course = await coursesService.updateCourse(courseId, accountId, courseData)
-      if (!course) {
-        return res.send(`Course with id: ${courseId} does not exist.`)
-      }
       return res.send(course)
     } catch (error) {
       next(error)
@@ -66,8 +60,8 @@ export class CoursesController extends BaseController {
     try {
       const courseId = req.params.courseId
       const accountId = req.userInfo.id
-      await coursesService.removeCourse(courseId, accountId)
-      return res.send(`Course with id: ${courseId} was successfully removed.`)
+      const result = await coursesService.removeCourse(courseId, accountId)
+      return res.send(result)
     } catch (error) {
       next(error)
     }

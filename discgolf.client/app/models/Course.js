@@ -1,33 +1,50 @@
 export class Course {
-    constructor(data) {
-        // console.log('data', data)
-        this.name = data.name
-        this.description = data.description
-        this.imgUrl = data.imgUrl
-        this.difficulty = data.difficulty
-        this.accountId = data.accountId
-    }
+  constructor(data) {
+    // console.log('data', data)
+    this.id = data.id
+    this.name = data.name
+    this.description = data.description
+    this.imgUrl = data.imgUrl
+    this.difficulty = data.difficulty
+    this.accountId = data.accountId
+  }
 
-    get coursesCardTemplate() {
-        return `
-    <div class="card" style="width: 18rem;">
+  get coursesCardTemplate() {
+    return /*html*/`
+    <div onclick="app.CoursesController.setActiveCourse('${this.id}')" class="card selectable" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#modal">
         <img src="${this.imgUrl}" class="card-img-top" alt="${this.name}">
         <div class="card-body">
         <p class="card-name">${this.name}</p>
         </div>
     </div>
         `
-    }
+  }
 
-    static get CourseForm() {
-        return /*html*/ `
+  get activeTemplate() {
+    return /*html*/`
+    <div class="modal-content ps-3">
+        <div class="modal-header pb-2">
+            <h1 class="modal-title fs-5" id="">${this.name}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row">
+        <img src="${this.imgUrl}" alt="${this.name}">
+        <p>${this.description}</p>
+        <p>Difficulty: ${this.difficulty}</p>
+        </div>
+    </div>
+        `
+  }
+
+  static get CourseForm() {
+    return /*html*/`
     <div class="modal-content ps-3">
         <div class="modal-header pb-2">
             <h1 class="modal-title fs-5" id="">Course</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body row">
-            <form action="" onsubmit="app.CourseController.createCourse(event)">
+            <form onsubmit="app.CoursesController.createCourse(event)">
             <div class="pb-2">
                 <!-- <label for="name">name of course</label> -->
                 <input type="text" name="name" id="name" minlength="1" maxlength="75" required placeholder="Name of Course">
@@ -53,6 +70,7 @@ export class Course {
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
             </form>
         </div>
+    </div>
         `
-    }
+  }
 }
