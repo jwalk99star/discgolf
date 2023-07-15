@@ -69,6 +69,23 @@ export class CoursesController {
     }
   }
 
+  async deleteCourse() {
+    console.log('deleting button works. deleting course: ', AppState.activeCourse)
+      const wantsToDelete = await Pop.confirm('Delete this Course?')
+
+      if (!wantsToDelete) {
+        return
+      }
+    try {
+      await coursesService.deleteCourse()
+      // @ts-ignore
+      bootstrap.Modal.getOrCreateInstance('#modal').hide()
+    } catch (error) {
+      console.error(error)
+      Pop
+    }
+  }
+
   setActiveCourse(courseId) {
     coursesService.setActiveCourse(courseId)
   }

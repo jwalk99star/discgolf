@@ -31,6 +31,8 @@ export class Course {
         <img src="${this.imgUrl}" alt="${this.name}">
         <p>${this.description}</p>
         <p>Difficulty: ${this.difficulty}</p>
+        <button onclick="app.CoursesController.deleteCourse()" class="btn btn-danger" aria-label="Delete">Delete</button>
+
         </div>
     </div>
         `

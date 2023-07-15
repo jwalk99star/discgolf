@@ -27,6 +27,14 @@ class CoursesServices {
     AppState.activeCourse = foundCourse
   }
 
+  async deleteCourse() {
+    const activeCourseId = AppState.activeCourse.id
+    const res = await api.delete(`api/courses/${activeCourseId}`)
+    const activeCourseIndex = AppState.courses.findIndex(c => c.id == activeCourseId)
+    AppState.courses.splice(activeCourseIndex, 1)
+    AppState.emit('courses')
+  }
+
 }
 
 export const coursesService = new CoursesServices()
