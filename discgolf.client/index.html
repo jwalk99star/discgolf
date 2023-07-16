@@ -33,35 +33,32 @@
   }
 </style>
 
-<body class="" background="https://www.innovadiscs.com/wp-content/uploads/2015/02/targets-header.jpg">
-  <!-- SECTION -->
-  <header>
+<!-- SECTION BODY / BG IMAGE -->
+
+<body class="img-fluid" background="https://www.innovadiscs.com/wp-content/uploads/2015/02/targets-header.jpg">
+
+  <!-- SECTION HEADER-->
+  <header class="container-fluid">
     <nav class="navbar navbar-dark navbar-expand bg-clear text-light px-2">
 
-        <div class="col-2">
-          <button onclick="app.CoursesController.setCourseForm()" id="courseFormButton" class="btn btn-success d-none"
+      <div class="col-2">
+        <button onclick="app.CoursesController.setCourseForm()" id="courseFormButton" class="btn btn-success d-none"
           type="button" data-bs-toggle="modal" data-bs-target="#modal">Share a Course</button>
-        </div>
+      </div>
 
-      <div class="col-8 text-light text-shadow text-center">
+      <div class="col-8 text-light text-shadow text-center head-text">
         <h1 class="fs-1 fw-bold">Frolf Mania</h1>
         <h4>Please Share Favorite Courses and Helpful Comments</h4>
-        </div>
+      </div>
 
-      <div class="col-2 text-dark fw-bold justify-content-end align-items-center d-flex" id="authstate"></div>
+      <div class="col-2 text-light text-shadow fw-bold justify-content-end align-items-center d-flex" id="authstate"></div>
 
     </nav>
   </header>
 
-  <!-- SECTION -->
+  <!-- SECTION MAIN-->
   <main id="router-view">
     <div class="container-fluid">
-
-      <!-- BACKGROUND -->
-      <div class="row background background-image">
-        <img href="https://www.innovadiscs.com/wp-content/uploads/2015/06/course-target-featured.jpg"></img>
-      </div>
-
 
       <div id="coursesCard" class="row justify-content-around">
         <!-- <div class="card" style="width: 18rem;">
@@ -73,19 +70,10 @@
       </div>
     </div>
 
-
   </main>
 
 
-  <!-- SECTION -->
-  <!-- <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
-    </div>
-  </footer> -->
-
-
-  <!-- Modal -->
+  <!-- SECTION MODAL-->
   <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" id="modal-guts">
 
@@ -118,8 +106,8 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
-      </form>
-      </div> -->
+    </form>
+  </div> -->
 
       <!-- Button trigger modal -->
       <!-- <button type="button" class="btn btn-primary">
@@ -130,6 +118,11 @@
   </div>
 
 
+  <footer class="bg-secondary text-light mt-2">
+    <div class="text-center no-select">
+      <p class="mb-0"><small>Made with ❤️‍🔥 by Brandon, Jared, Joshua, Kyle</small></p>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
