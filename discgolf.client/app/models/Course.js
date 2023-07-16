@@ -27,15 +27,17 @@ export class Course {
     return /*html*/`
     <div class="modal-content ps-3">
         <div class="modal-header pb-2">
-            <h1 class="modal-title fs-5" id="">${this.name}</h1>
+            <h1 class="modal-title fs-5" id="">${this.name} in ${this.location}</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body row">
         <img src="${this.imgUrl}" alt="${this.name}">
         <p>${this.description}</p>
         <p>Difficulty: ${this.difficulty}</p>
-        <button onclick="app.CoursesController.deleteCourse()" class="btn btn-danger" aria-label="Delete">Delete</button>
-
+        <span class="d-flex justify-content-between">
+        <button onclick="app.CoursesController.deleteCourse()" class="btn btn-danger" aria-label="Delete">Delete Course</button>
+        <button onclick="app.CoursesController.discussCourse()" class="btn btn-info" aria-label="Comment">Share a Comment</button>
+        </span>
         </div>
     </div>
         `
