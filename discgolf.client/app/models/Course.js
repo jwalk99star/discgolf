@@ -3,6 +3,7 @@ export class Course {
     // console.log('data', data)
     this.id = data.id
     this.name = data.name
+    this.location = data.location
     this.description = data.description
     this.imgUrl = data.imgUrl
     this.difficulty = data.difficulty
@@ -14,7 +15,8 @@ export class Course {
     <div onclick="app.CoursesController.setActiveCourse('${this.id}')" class="mt-5 mx-3 col-md-3 col-12 p-4 card elevation-5 selectable course-card text-light text-center text-shadow"  data-bs-toggle="modal" data-bs-target="#modal">
         <img src="${this.imgUrl}" class="card-img-top courseImg" alt="${this.name}">
         <div class="card-body">
-        <p class="card-name">${this.name}</p>
+        <p class="card-name fs-3">${this.name}</p>
+        <p class= "card-location fs-4">${this.location}</p>
         </div>
     </div>
         `
@@ -50,6 +52,9 @@ export class Course {
             <div class="pb-2">
                 <!-- <label for="name">name of course</label> -->
                 <input type="text" name="name" id="name" minlength="1" maxlength="75" required placeholder="Name of Course">
+            </div>
+            <div class="pb-2">
+                <input type="text" name="location" id="location" minlength="1" maxlength="75" required placeholder="City, State">
             </div>
             <div class="pb-2">
                 <!-- <label for="imgUrl">Course Img</label> -->
