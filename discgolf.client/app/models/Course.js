@@ -16,7 +16,8 @@ export class Course {
         <img src="${this.imgUrl}" class="card-img-top courseImg" alt="${this.name}">
         <div class="card-body">
         <p class="card-name fs-3">${this.name}</p>
-        <p class= "card-location fs-4">${this.location}</p>
+        <p class="card-location fs-4">${this.location}</p>
+        <p class="card-difficulty fs-4">${this.difficulty}
         </div>
     </div>
         `
