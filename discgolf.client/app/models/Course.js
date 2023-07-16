@@ -36,9 +36,13 @@ export class Course {
         <p>Difficulty: ${this.difficulty}</p>
         <span class="d-flex justify-content-between">
         <button onclick="app.CoursesController.deleteCourse()" class="btn btn-danger" aria-label="Delete">Delete Course</button>
-        <button onclick="app.CoursesController.createComment()" class="btn btn-info" aria-label="Comment">Share a Comment</button>
+        <button onclick="app.CommentsController._drawComments()" class="btn btn-info" aria-label="Comment">See/Add Comments</button>
         </span>
         </div>
+    </div>
+    <div id="comment-form">
+    </div>
+    <div id="comment-content">
     </div>
         `
   }
@@ -82,5 +86,5 @@ export class Course {
         </div>
     </div>
         `
-  }
+    }
 }

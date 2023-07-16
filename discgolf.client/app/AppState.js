@@ -16,8 +16,11 @@ class ObservableAppState extends EventEmitter {
   /** @type {import('./models/Course.js').Course[]} */
   courses = []
 
-  /** @type {import('./models/Course.js').Course | null | undefined} */
   activeCourse = null
+  
+  /** @type {import('./models/Comment.js').Comment[]} */
+
+  comments = []
 
   // Used to load initial data
   init() {
