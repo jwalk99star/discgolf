@@ -11,7 +11,7 @@ export class Course {
 
   get coursesCardTemplate() {
     return /*html*/`
-    <div onclick="app.CoursesController.setActiveCourse('${this.id}')" class="mt-5 mx-3 col-md-3 col-12 p-4 card elevation-5 selectable courseCard"  data-bs-toggle="modal" data-bs-target="#modal">
+    <div onclick="app.CoursesController.setActiveCourse('${this.id}')" class="mt-5 mx-3 col-md-3 col-12 p-4 card elevation-5 selectable course-card text-light text-center text-shadow"  data-bs-toggle="modal" data-bs-target="#modal">
         <img src="${this.imgUrl}" class="card-img-top courseImg" alt="${this.name}">
         <div class="card-body">
         <p class="card-name">${this.name}</p>
