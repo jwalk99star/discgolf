@@ -6,8 +6,9 @@ class CommentsService{
 
   async getCommentsByActiveCourse() {
     const activeCourse = AppState.activeCourse
+    console.log('gCBAC', activeCourse)
 
-    const res = await api.get('api/courses/${activeCourse.id}/comments')
+    const res = await api.get('api/comments')
 
     AppState.comments = res.data.map(comment => new Comment(comment))
   }
@@ -17,7 +18,7 @@ class CommentsService{
 
     formData.courseId = activeCourse.id
 
-    const res = await api.post('api/courseComments', formData)
+    const res = await api.post('api/comments', formData)
 
     const newComment = new Comment(res.data)
 

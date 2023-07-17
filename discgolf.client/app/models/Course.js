@@ -25,24 +25,31 @@ export class Course {
 
   get activeTemplate() {
     return /*html*/`
-    <div class="modal-content ps-3">
+    <div class="modal-content ps-3 text-center">
         <div class="modal-header pb-2">
             <h1 class="modal-title fs-5" id="">${this.name}, located in ${this.location}</h1>
+            <div>
+            <button onclick="app.CoursesController.deleteCourse('${this.id}')" class="btn btn-danger" aria-label="Delete"><i class="mdi mdi-trash-can justify-content-end"></i></button>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
         </div>
         <div class="modal-body row">
         <img src="${this.imgUrl}" alt="${this.name}">
         <p>${this.description}</p>
         <p>Difficulty: ${this.difficulty}</p>
-        <span class="d-flex justify-content-between">
-        <button onclick="app.CoursesController.deleteCourse()" class="btn btn-danger" aria-label="Delete">Delete Course</button>
-        <button onclick="app.CommentsController._drawComments()" class="btn btn-info" aria-label="Comment">See/Add Comments</button>
-        </span>
+
+        <form onsubmit="app.CommentsController.createComment(event)">
+        <div class="form-group">
+        <input name="content" type="text" class="form-control mb-2" id="comment-content"
+        placeholder="Write Your Comment Here" minlength="1" maxlength="75">
+        <button type="submit" class="btn btn-success">Share Comment</button>
         </div>
-    </div>
-    <div id="comment-form">
-    </div>
-    <div id="comment-content">
+        </form>
+
+        <div class="" id="comments">
+        </div>
+
+        </div>
     </div>
         `
   }

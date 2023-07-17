@@ -9,7 +9,7 @@ function _drawComments() {
   let template = ''
 
   comments.forEach(comment => template += comment.CommentTemplate)
-  setHTML('comment-content', template)
+  setHTML('comments', template)
 }
 
 
@@ -17,7 +17,7 @@ export class CommentsController {
   constructor() {
     console.log('comments controller');
 
-    AppState.on('activeCourse', this.getCommentsByActiveCourse)
+    // AppState.on('activeCourse', this.getCommentsByActiveCourse)
     AppState.on('comments', _drawComments)
 
   }
