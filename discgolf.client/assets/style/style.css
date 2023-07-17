@@ -21,3 +21,9 @@ main {
   background-color: rgb(114, 187, 232);
   /* height: 250px; */
 }
+
+.comment-card {
+  border-width: .2em;
+  border-style: solid;
+  max-width: 30vw;
+}

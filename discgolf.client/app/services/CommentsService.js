@@ -5,7 +5,7 @@ import { api } from "./AxiosService.js"
 class CommentsService{
   async getComments() {
     
-    const res = await api.get('api/comments')
+    const res = await api.get('api/courses/comments')
     console.log('getting comments data', res.data);
     AppState.comments = res.data.map(comment => new Comment(comment))
   }

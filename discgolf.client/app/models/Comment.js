@@ -10,8 +10,11 @@ export class Comment {
 
   get CommentTemplate() {
     return`
+    <div class="comment-card elevation-5 bg-light text-center rounded"
     <p class="fs-5">${this.date.toLocaleString()}
     <p class="fs-3">${this.content}</p>
+    
+    </div>
     `
   }
 

@@ -43,20 +43,16 @@ export class Course {
 
         <div class="form-group">
         <form onsubmit="app.CommentsController.createComment(event)">
-        <input name="content" type="text" class="form-control mb-3" id="comment-content"
+        <input name="content" type="text" class="form-control mb-3" id="content"
         placeholder="Write Your Comment Here" minlength="1" maxlength="75">
         <button type="submit" class="btn btn-success mb-3">Share Comment</button>
         </form>
         </div>
-
-        <div class="comment-card elevation-5 mb-2 rounded">
-        <ul id="comment-list">
-        </ul>
+        
         </div>
-
-    </div>
         `
     }
+
 
     static get CourseForm() {
         return /*html*/`
