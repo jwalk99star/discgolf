@@ -8,7 +8,7 @@ function _drawComments() {
   let comments = AppState.comments
   let template = ''
   comments.forEach(com => template += com.CommentTemplate)
-  setHTML('comment-list', template)
+  // setHTML('comment-list', template)
 }
 
 
@@ -22,7 +22,7 @@ export class CommentsController {
   async getComments() {
     try {
       await commentsService.getComments()
-    } catch (error){
+    } catch (error) {
       console.error(error)
       Pop.error(error.message)
     }
