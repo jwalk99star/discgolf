@@ -34,7 +34,7 @@ export class Course {
             </div>
         </div>
 
-        <div class="modal-body row">        
+        <div class="modal-body row">
         <img src="${this.imgUrl}" alt="${this.name}">
         <p>${this.description}</p>
         <p>Difficulty: ${this.difficulty}</p>

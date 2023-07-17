@@ -3,15 +3,14 @@ import { Comment } from "../models/Comment.js"
 import { api } from "./AxiosService.js"
 
 class CommentsService{
-
-  async getCommentsByActiveCourse() {
-    const activeCourse = AppState.activeCourse
-    console.log('gCBAC', activeCourse)
-
+  async getComments() {
+    
     const res = await api.get('api/comments')
-
-    AppState.comments = res.data.map(comment => new Comment(comment))
+    console.log('getting comments data', res.data);
+    AppState.comments = res.data.map(comment => new Comment(comment))    
   }
+
+
 
   async createComment(formData) {
     const activeCourse = AppState.activeCourse
