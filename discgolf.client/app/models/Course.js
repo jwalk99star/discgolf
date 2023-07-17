@@ -49,7 +49,9 @@ export class Course {
         </form>
         </div>
 
-        <div class="comment-card elevation-5 mb-2 rounded" id="comments">
+        <div class="comment-card elevation-5 mb-2 rounded">
+        <ul id="comment-list">
+        </ul>
         </div>
 
     </div>
