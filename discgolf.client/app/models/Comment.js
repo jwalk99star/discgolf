@@ -16,16 +16,4 @@ export class Comment {
   }
 
 
-get CreateCommentForm() {
-  return`
-  <form onsubmit="app.CommentsController.createComment(event)">
-  <div class="form-group">
-    <input name="content" type="text" class="form-control" id="comment-content"
-      placeholder="Write Your Comment Here">
-  </div>
-  <button type="submit" class="btn btn-success">Submit</button>
-</form>
-`
-}
-
 }
