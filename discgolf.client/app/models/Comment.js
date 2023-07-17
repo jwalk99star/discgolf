@@ -10,6 +10,7 @@ export class Comment {
 
   get CommentTemplate() {
     return`
+    <p class="fs-5">${this.date.toLocaleString()}
     <p class="fs-3">${this.content}</p>
     `
   }

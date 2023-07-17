@@ -1,17 +1,17 @@
 export class Course {
-  constructor(data) {
-    // console.log('data', data)
-    this.id = data.id
-    this.name = data.name
-    this.location = data.location
-    this.description = data.description
-    this.imgUrl = data.imgUrl
-    this.difficulty = data.difficulty
-    this.accountId = data.accountId
-  }
+    constructor(data) {
+        // console.log('data', data)
+        this.id = data.id
+        this.name = data.name
+        this.location = data.location
+        this.description = data.description
+        this.imgUrl = data.imgUrl
+        this.difficulty = data.difficulty
+        this.accountId = data.accountId
+    }
 
-  get coursesCardTemplate() {
-    return /*html*/`
+    get coursesCardTemplate() {
+        return /*html*/`
     <div onclick="app.CoursesController.setActiveCourse('${this.id}')" class="mt-5 mx-3 col-md-3 col-12 p-4 card elevation-5 selectable course-card text-light text-center text-shadow"  data-bs-toggle="modal" data-bs-target="#modal">
         <img src="${this.imgUrl}" class="card-img-top courseImg" alt="${this.name}">
         <div class="card-body">
@@ -21,11 +21,11 @@ export class Course {
         </div>
     </div>
         `
-  }
+    }
 
-  get activeTemplate() {
-    return /*html*/`
-    <div class="modal-content ps-3 text-center">
+    get activeTemplate() {
+        return /*html*/`
+    <div class="modal-content px-3 text-center">
         <div class="modal-header pb-2">
             <h1 class="modal-title fs-5" id="">${this.name}, located in ${this.location}</h1>
             <div>
@@ -33,29 +33,31 @@ export class Course {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
         </div>
-        <div class="modal-body row">
+
+        <div class="modal-body row">        
         <img src="${this.imgUrl}" alt="${this.name}">
         <p>${this.description}</p>
         <p>Difficulty: ${this.difficulty}</p>
+        <button onclick="_drawComments()" class="btn btn-info">See All Comments</button>
+        </div>
 
-        <form onsubmit="app.CommentsController.createComment(event)">
         <div class="form-group">
-        <input name="content" type="text" class="form-control mb-2" id="comment-content"
+        <form onsubmit="app.CommentsController.createComment(event)">
+        <input name="content" type="text" class="form-control mb-3" id="comment-content"
         placeholder="Write Your Comment Here" minlength="1" maxlength="75">
-        <button type="submit" class="btn btn-success">Share Comment</button>
-        </div>
+        <button type="submit" class="btn btn-success mb-3">Share Comment</button>
         </form>
-
-        <div class="" id="comments">
         </div>
 
+        <div class="comment-card elevation-5 mb-2 rounded" id="comments">
         </div>
+
     </div>
         `
-  }
+    }
 
-  static get CourseForm() {
-    return /*html*/`
+    static get CourseForm() {
+        return /*html*/`
     <div class="modal-content ps-3">
         <div class="modal-header pb-2">
             <h1 class="modal-title fs-5" id="">Course</h1>
